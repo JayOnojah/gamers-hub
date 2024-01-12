@@ -17,8 +17,8 @@ export const Logo = () => {
           <Image src="/spooky.svg" alt="Gamers Hub" height="32" width="32" />
         </div>
         <div className={cn('hidden lg:block', font.className)}>
-          <p className="text-lg font-semibold">Gamers Hub</p>
-          <p className="text-xs text-muted-foreground">#1 Reality Streamer</p>
+          <p className="text-xl font-semibold">Gamers Hub</p>
+          <p className="text-xs text-muted-foreground">The Reality Streamer</p>
         </div>
       </div>
     </Link>
