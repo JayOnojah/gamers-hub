@@ -24,8 +24,10 @@ export const Toggle = () => {
         </div>
       )}
       {!collapsed && (
-        <div className="p-3 pl-6 mb-2 flex items-center w-full">
-          <p className="font-semibold text-primary">For You</p>
+        <div className="p-3 pl-6 mb-2 mt-2 flex items-center w-full">
+          <p className="font-semibold text-primary text-[17.5px]">
+            Explore Channels
+          </p>
           <Hint label={label} side="right" asChild>
             <Button
               onClick={onCollapse}
