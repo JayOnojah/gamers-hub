@@ -34,8 +34,8 @@ export const NavItem = ({
       )}
     >
       <Link href={href}>
-        <div className="flex items-center gap-x-4">
-          <Icon className={cn('h-4 w-4', collapsed ? 'mr-0' : 'mr-2')} />
+        <div className="flex items-center gap-x-4 text-[16px]">
+          <Icon className={cn('h-5 w-5', collapsed ? 'mr-0' : 'mr-2')} />
           {!collapsed && <span>{label}</span>}
         </div>
       </Link>

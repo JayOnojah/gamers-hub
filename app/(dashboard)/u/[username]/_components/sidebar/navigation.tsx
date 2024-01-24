@@ -43,7 +43,7 @@ export const Navigation = () => {
   }
 
   return (
-    <ul className="space-y-2 px-2 pt-4 lg:pt-0">
+    <ul className="space-y-4 px-2 pt-4 lg:pt-0">
       {routes.map((route) => (
         <NavItem
           key={route.href}
