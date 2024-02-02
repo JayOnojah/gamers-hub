@@ -7,9 +7,10 @@ import { cn } from '@/lib/utils';
 import { useChatSidebar } from '@/store/use-chat-sidebar';
 import { useViewerToken } from '@/hooks/use-viewer-token';
 
-import { Video, VideoSkeleton } from './video';
-import { Chat, ChatSkeleton } from './chat';
+import { Header, HeaderSkeleton } from './header';
 import { ChatToggle } from './chat-toggle';
+import { Chat, ChatSkeleton } from './chat';
+import { Video, VideoSkeleton } from './video';
 
 interface StreamPlayerProps {
   user: User & { stream: Stream | null };
@@ -41,14 +42,22 @@ export const StreamPlayer = ({
         token={token}
         serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_WS_URL}
         className={cn(
-          'grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-6 h-full',
+          'grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-12 h-full',
           collapsed && 'lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2'
         )}
       >
-        <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar">
+        <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-9 lg:overflow-y-auto hidden-scrollbar">
           <Video hostName={user.username} hostIdentity={user.id} />
+          <Header
+            hostName={user.username}
+            hostIdentity={user.id}
+            viewerIdentity={identity}
+            imageUrl={user.imageUrl}
+            isFollowing={isFollowing}
+            name={stream.name}
+          />
         </div>
-        <div className={cn('col-span-1', collapsed && 'hidden')}>
+        <div className={cn('col-span-1 2xl:col-span-3', collapsed && 'hidden')}>
           <Chat
             viewerName={name}
             hostName={user.username}
@@ -66,12 +75,12 @@ export const StreamPlayer = ({
 
 export const StreamPlayerSkeleton = () => {
   return (
-    <div className="grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-6 h-full">
-      <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar pb-10">
+    <div className="grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-12 h-full">
+      <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-9 lg:overflow-y-auto hidden-scrollbar pb-10">
         <VideoSkeleton />
-        {/* TODO: Header Skeleton */}
+        <HeaderSkeleton />
       </div>
-      <div className="col-span-1 bg-background">
+      <div className="col-span-1 2xl:col-span-3 bg-background">
         <ChatSkeleton />
       </div>
     </div>
