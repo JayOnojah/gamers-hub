@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { cn } from '@/lib/utils';
+import { SendHorizonal } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -61,21 +62,27 @@ export const ChatForm = ({
     >
       <div className="w-full">
         <ChatInfo isDelayed={isDelayed} isFollowersOnly={isFollowersOnly} />
-        <Input
-          onChange={(e) => onChange(e.target.value)}
-          value={value}
-          disabled={isDisabled}
-          placeholder="Send a message"
-          className={cn(
-            'border-white/10',
-            isFollowersOnly && 'rounded-t-none border-t-0'
-          )}
-        />
-      </div>
-      <div className="ml-auto">
-        <Button type="submit" variant="primary" size="sm" disabled={isDisabled}>
-          Chat
-        </Button>
+        <div className="relative w-full flex items-center mt-1">
+          <Input
+            onChange={(e) => onChange(e.target.value)}
+            value={value}
+            disabled={isDisabled}
+            placeholder="Send a message..."
+            className={cn(
+              'border-white/10 rounded-r-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0',
+              isFollowersOnly && 'rounded-r-none border-t-0'
+            )}
+          />
+          <Button
+            type="submit"
+            variant="primary"
+            size="sm"
+            disabled={isDisabled}
+            className="rounded-l-none py-5"
+          >
+            <SendHorizonal className="w-4 h-4" />
+          </Button>
+        </div>
       </div>
     </form>
   );

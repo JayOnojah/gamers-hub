@@ -1,9 +1,9 @@
 'use-client';
 
 import { toast } from 'sonner';
-import { useState, useTransition, useRef, ElementRef } from 'react';
-import { useRouter } from 'next/navigation';
 import { Trash } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useState, useTransition, useRef, ElementRef } from 'react';
 
 import {
   Dialog,
@@ -69,7 +69,7 @@ export const InfoModal = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="link" size="sm" className="ml-auto">
+        <Button variant="link" size="sm" className="ml-auto text-[16px]">
           Edit
         </Button>
       </DialogTrigger>
@@ -133,11 +133,16 @@ export const InfoModal = ({
           </div>
           <div className="flex justify-between">
             <DialogClose ref={closeRef} asChild>
-              <Button type="button" variant="ghost">
+              <Button type="button" variant="ghost" className="text-md">
                 Cancel
               </Button>
             </DialogClose>
-            <Button disabled={isPending} variant="primary" type="submit">
+            <Button
+              disabled={isPending}
+              variant="primary"
+              type="submit"
+              className="rounded-md px-6 text-md"
+            >
               Save
             </Button>
           </div>

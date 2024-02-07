@@ -1,7 +1,7 @@
 'use client';
 
 import { toast } from 'sonner';
-import { Heart } from 'lucide-react';
+import { UserPlus } from 'lucide-react';
 import { useTransition } from 'react';
 import { useAuth } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
@@ -66,9 +66,9 @@ export const Actions = ({
       onClick={toggleFollow}
       variant="primary"
       size="sm"
-      className="w-full lg:w-auto"
+      className="w-full lg:w-auto rounded-md px-4"
     >
-      <Heart
+      <UserPlus
         className={cn('h4 w-4 mr-2', isFollowing ? 'fill-white' : 'fill-none')}
       />
       {isFollowing ? 'Unfollow' : 'Follow'}
