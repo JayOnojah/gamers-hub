@@ -1,5 +1,5 @@
 import { SignInButton, UserButton, currentUser } from '@clerk/nextjs';
-import { Clapperboard } from 'lucide-react';
+import { Clapperboard, UserCircleIcon } from 'lucide-react';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
@@ -11,8 +11,12 @@ export const Actions = async () => {
     <div className="flex items-center justify-end gap-x-2 ml-4 lg:ml-0">
       {!user && (
         <SignInButton>
-          <Button size="sm" variant="primary" className="rounded-3xl px-6">
-            Login
+          <Button
+            size="sm"
+            variant="primary"
+            className="rounded-3xl px-6 text-md py-5"
+          >
+            <UserCircleIcon className="h-5 w-5 mr-2" /> Login
           </Button>
         </SignInButton>
       )}

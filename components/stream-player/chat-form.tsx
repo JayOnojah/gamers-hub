@@ -69,16 +69,16 @@ export const ChatForm = ({
             disabled={isDisabled}
             placeholder="Send a message..."
             className={cn(
-              'border-white/10 rounded-r-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0',
+              'rounded-r-none border-r-0 rounded-l-lg pl-5 focus-visible:ring-0 py-5 focus-visible:ring-transparent focus-visible:ring-offset-0 border border-[#585858] placeholder:text-[#989898]',
               isFollowersOnly && 'rounded-r-none border-t-0'
             )}
           />
           <Button
             type="submit"
-            variant="primary"
+            variant="secondary"
             size="sm"
             disabled={isDisabled}
-            className="rounded-l-none py-5"
+            className="rounded-l-none py-5 rounded-r-lg border-solid border border-[#585858] bg-[#585858] px-4 hover:bg-[#585858]"
           >
             <SendHorizonal className="w-4 h-4" />
           </Button>

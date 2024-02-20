@@ -75,11 +75,13 @@ export const InfoModal = ({
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Edit Stream Info</DialogTitle>
+          <DialogTitle className="text-2xl font-semibold">
+            Edit you stream info
+          </DialogTitle>
         </DialogHeader>
         <form onSubmit={onSubmit} className="space-y-14">
           <div className="space-y-2">
-            <Label>Name</Label>
+            <Label className="text-md mb-3 block">Name</Label>
             <Input
               placeholder="Stream name"
               onChange={onChange}
@@ -88,7 +90,7 @@ export const InfoModal = ({
             />
           </div>
           <div className="space-y-2">
-            <Label>Thumbnail</Label>
+            <Label className="text-md mb-4 block">Thumbnail</Label>
             {thumbnailUrl ? (
               <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10">
                 <div className="absolute top-2 right-2 z-[10]">

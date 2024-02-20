@@ -28,7 +28,7 @@ export const InfoCard = ({
   return (
     <div className="px-4">
       <div className="rounded-xl bg-background mb-5">
-        <div className="flex items-center gap-x-2.5 p-4">
+        <div className="flex items-center gap-x-2.5 p-6 lg:p-10">
           <div className="rounded-md bg-blue-600 p-3 h-auto w-auto">
             <Pencil className="h-5 w-5" />
           </div>
@@ -43,13 +43,13 @@ export const InfoCard = ({
           <InfoModal initialName={name} initialThumbnailUrl={thumbnailUrl} />
         </div>
         <Separator />
-        <div className="p-4 lg:p-6 space-y-4">
+        <div className="p-6 lg:p-10 space-y-4">
           <div>
-            <h3 className="text-sm text-muted-foreground mb-2">Name</h3>
+            <h3 className="text-sm text-muted-foreground mb-2">NAME</h3>
             <p className="text-sm font-semibold">{name}</p>
           </div>
           <div>
-            <h3 className="text-sm text-muted-foreground mb-2">Thumbnail</h3>
+            <h3 className="text-sm text-muted-foreground mb-4">THUMBNAIL</h3>
             {thumbnailUrl && (
               <div className="relative aspect-video rounded-md overflow-hidden w-[200px] border border-white/10">
                 <Image

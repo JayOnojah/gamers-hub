@@ -22,7 +22,7 @@ export const AboutCard = ({
   const hostAsViewer = `host-${hostIdentity}`;
   const isHost = viewerIdentity === hostAsViewer;
 
-  const followedByLabel = followedByCount === 1 ? 'follower' : 'followers';
+  const followedByLabel = followedByCount === 1 ? 'Follower' : 'Followers';
 
   return (
     <div className="px-4">
@@ -34,11 +34,13 @@ export const AboutCard = ({
           {isHost && <BioModal initialValue={bio} />}
         </div>
         <div className="text-sm text-muted-foreground">
-          <span className="font-semibold text-primary">{followedByCount}</span>{' '}
+          <span className="font-semibold text-primary mr-2">
+            {followedByCount}
+          </span>{' '}
           {followedByLabel}
         </div>
         <p className="text-sm">
-          {bio || 'This user prefers to keep an air of mystery about them'}
+          {bio || 'This user prefers to keep an air of mystery about them.'}
         </p>
       </div>
     </div>
