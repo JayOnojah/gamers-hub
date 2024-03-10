@@ -26,7 +26,7 @@ export const Navigation = () => {
       icon: MessageSquare,
     },
     {
-      label: 'Keys',
+      label: 'Community',
       href: `/u/${user?.username}/community`,
       icon: Users,
     },
