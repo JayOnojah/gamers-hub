@@ -33,7 +33,7 @@ export const Actions = async () => {
               <span className="hidden lg:block">Dashboard</span>
             </Link>
           </Button>
-          <UserButton afterSignOutUrl=""></UserButton>
+          <UserButton afterSignOutUrl="/"></UserButton>
         </div>
       )}
     </div>
