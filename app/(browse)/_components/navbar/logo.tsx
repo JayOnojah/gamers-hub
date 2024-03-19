@@ -14,7 +14,12 @@ export const Logo = () => {
     <Link href="/">
       <div className="flex items-center gap-x-4 hover:opacity-75 transition">
         <div className="bg-white rounded-full p-1 mr-12 shrink-0 lg:mr-0 lg:shrink">
-          <Image src="/logo.png" alt="Gamers Hub" height="32" width="32" />
+          <Image
+            src="/images/logo.png"
+            alt="Gamers Hub"
+            height="32"
+            width="32"
+          />
         </div>
         <div className={cn('hidden lg:block', font.className)}>
           <p className="text-xl font-semibold">Gamers Hub</p>
