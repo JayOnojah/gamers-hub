@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import { Stream, User } from '@prisma/client';
+import { User } from '@prisma/client';
 
 import { Skeleton } from '@/components/ui/skeleton';
-import { LiveBagde } from '@/components/live-badge';
 import { Thumbnail, ThumbnailSkeleton } from '@/components/thumbnail';
 import { UserAvatar, UserAvatarSkeleton } from '@/components/user-avatar';
 
