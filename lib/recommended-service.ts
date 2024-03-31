@@ -50,7 +50,7 @@ export const getRecommended = async () => {
         },
       },
       orderBy: {
-        createdAt: 'desc',
+        updatedAt: 'desc',
       },
     });
   } else {
@@ -63,7 +63,7 @@ export const getRecommended = async () => {
         },
       },
       orderBy: {
-        createdAt: 'desc',
+        updatedAt: 'desc',
       },
     });
   }

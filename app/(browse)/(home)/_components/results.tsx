@@ -8,7 +8,7 @@ export const Results = async () => {
   const data = await getStreams();
 
   return (
-    <div>
+    <div className="pb-10">
       <h2 className="text-2xl font-semibold mb-6">Latest Streams</h2>
       {data.length === 0 && (
         <div className="text-muted-foreground text-sm">No streams found.</div>
