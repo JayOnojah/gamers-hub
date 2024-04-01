@@ -40,7 +40,7 @@ export const Recommended = ({ data }: RecommendedProps) => {
 export const RecommendedSkeleton = () => {
   return (
     <ul className="px-2">
-      {[...Array(3)].map((_, i) => (
+      {[...Array(10)].map((_, i) => (
         <UserItemSkeleton key={i} />
       ))}
     </ul>
