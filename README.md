@@ -1,4 +1,4 @@
-# TrustBank
+# GamersHub
 
 <div align="center">
   <br />
