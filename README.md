@@ -1,4 +1,4 @@
-# GamersHub
+# GamersHub (Twitch Clone)
 
 <div align="center">
   <br />
