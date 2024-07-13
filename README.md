@@ -3,7 +3,7 @@
 <div align="center">
   <br />
     <a href="https://gamers-hub.onojah.com/" target="_blank">
-      <img src="https://i.imgur.com/lQ8QpES.png" alt="Trust Bank Dashboard">
+      <img src="https://i.imgur.com/lQ8QpES.png" alt="Gamers Hub Overview">
     </a>
   <br />
 
