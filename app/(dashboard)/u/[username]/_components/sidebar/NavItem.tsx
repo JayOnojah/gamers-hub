@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { LucideIcon } from 'lucide-react';
+import Link from "next/link";
+import { LucideIcon } from "lucide-react";
 
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { useCreatorSidebar } from '@/store/use-creator-sidebar';
-import { Skeleton } from '@/components/ui/skeleton';
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { useCreatorSidebar } from "@/store/use-creator-sidebar";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface NavItemProps {
   icon: LucideIcon;
@@ -28,14 +28,13 @@ export const NavItem = ({
       asChild
       variant="ghost"
       className={cn(
-        'w-full h-12',
-        collapsed ? 'justify-center' : 'justify-start',
-        isActive && 'bg-accent'
-      )}
-    >
+        "w-full h-12",
+        collapsed ? "justify-center" : "justify-start",
+        isActive && "bg-accent"
+      )}>
       <Link href={href}>
         <div className="flex items-center gap-x-4 text-[16px]">
-          <Icon className={cn('h-5 w-5', collapsed ? 'mr-0' : 'mr-2')} />
+          <Icon className={cn("h-5 w-5", collapsed ? "mr-0" : "mr-2")} />
           {!collapsed && <span>{label}</span>}
         </div>
       </Link>

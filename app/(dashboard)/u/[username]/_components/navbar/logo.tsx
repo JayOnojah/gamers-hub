@@ -1,12 +1,12 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
+import Link from "next/link";
+import Image from "next/image";
+import { Inter } from "next/font/google";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 const font = Inter({
-  subsets: ['latin'],
-  weight: ['200', '300', '400', '500', '600', '700', '800'],
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
 export const Logo = () => {
@@ -21,7 +21,7 @@ export const Logo = () => {
             width="32"
           />
         </div>
-        <div className={cn('hidden lg:block', font.className)}>
+        <div className={cn("hidden lg:block", font.className)}>
           <p className="text-xl font-semibold">Gamers Hub</p>
           <p className="text-xs text-muted-foreground">The Reality Streamer</p>
         </div>
