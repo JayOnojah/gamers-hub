@@ -1,5 +1,5 @@
-import { db } from '@/lib/db';
-import { getSelf } from '@/lib/auth-service';
+import { db } from "@/lib/db";
+import { getSelf } from "@/lib/auth-service";
 
 export const getRecommended = async () => {
   let userId;
@@ -50,7 +50,7 @@ export const getRecommended = async () => {
         },
       },
       orderBy: {
-        updatedAt: 'desc',
+        updatedAt: "desc",
       },
     });
   } else {
@@ -63,7 +63,7 @@ export const getRecommended = async () => {
         },
       },
       orderBy: {
-        updatedAt: 'desc',
+        updatedAt: "desc",
       },
     });
   }

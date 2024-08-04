@@ -1,14 +1,14 @@
-import { createUploadthing, type FileRouter } from 'uploadthing/next';
+import { createUploadthing, type FileRouter } from "uploadthing/next";
 
-import { db } from '@/lib/db';
-import { getSelf } from '@/lib/auth-service';
+import { db } from "@/lib/db";
+import { getSelf } from "@/lib/auth-service";
 
 const f = createUploadthing();
 
 export const ourFileRouter = {
   thumbnailUploader: f({
     image: {
-      maxFileSize: '4MB',
+      maxFileSize: "4MB",
       maxFileCount: 1,
     },
   })

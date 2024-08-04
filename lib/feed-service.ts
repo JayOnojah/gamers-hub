@@ -1,5 +1,5 @@
-import { db } from '@/lib/db';
-import { getSelf } from '@/lib/auth-service';
+import { db } from "@/lib/db";
+import { getSelf } from "@/lib/auth-service";
 
 export const getStreams = async () => {
   let userId;
@@ -35,10 +35,10 @@ export const getStreams = async () => {
       },
       orderBy: [
         {
-          isLive: 'desc',
+          isLive: "desc",
         },
         {
-          updatedAt: 'desc',
+          updatedAt: "desc",
         },
       ],
     });
@@ -53,10 +53,10 @@ export const getStreams = async () => {
       },
       orderBy: [
         {
-          isLive: 'desc',
+          isLive: "desc",
         },
         {
-          updatedAt: 'desc',
+          updatedAt: "desc",
         },
       ],
     });

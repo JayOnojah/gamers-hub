@@ -1,5 +1,5 @@
-import { db } from '@/lib/db';
-import { getSelf } from '@/lib/auth-service';
+import { db } from "@/lib/db";
+import { getSelf } from "@/lib/auth-service";
 
 export const getFollowedUsers = async () => {
   try {
@@ -44,7 +44,7 @@ export const isFollowingUser = async (id: string) => {
     });
 
     if (!otherUser) {
-      throw new Error('User not found');
+      throw new Error("User not found");
     }
 
     if (otherUser.id === self.id) {
@@ -72,11 +72,11 @@ export const followUser = async (id: string) => {
   });
 
   if (!otherUser) {
-    throw new Error('User not found');
+    throw new Error("User not found");
   }
 
   if (otherUser.id === self.id) {
-    throw new Error('Cannot follow yourself');
+    throw new Error("Cannot follow yourself");
   }
 
   const existingFollow = await db.follow.findFirst({
@@ -87,7 +87,7 @@ export const followUser = async (id: string) => {
   });
 
   if (existingFollow) {
-    throw new Error('Already following');
+    throw new Error("Already following");
   }
 
   const follow = await db.follow.create({
@@ -114,11 +114,11 @@ export const unfollowUser = async (id: string) => {
   });
 
   if (!otherUser) {
-    throw new Error('User not found');
+    throw new Error("User not found");
   }
 
   if (otherUser.id === self.id) {
-    throw new Error('Cannot unfollow yourself');
+    throw new Error("Cannot unfollow yourself");
   }
 
   const existingFollow = await db.follow.findFirst({
@@ -129,7 +129,7 @@ export const unfollowUser = async (id: string) => {
   });
 
   if (!existingFollow) {
-    throw new Error('Not following');
+    throw new Error("Not following");
   }
 
   const follow = await db.follow.delete({
