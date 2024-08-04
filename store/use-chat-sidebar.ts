@@ -1,8 +1,8 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 export enum ChatVariant {
-  CHAT = 'CHAT',
-  COMMUNITY = 'COMMUNITY',
+  CHAT = "CHAT",
+  COMMUNITY = "COMMUNITY",
 }
 
 interface ChatSidebarStore {
