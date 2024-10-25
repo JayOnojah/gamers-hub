@@ -1,8 +1,8 @@
-import { SignInButton, UserButton, currentUser } from '@clerk/nextjs';
-import { Clapperboard, UserCircleIcon } from 'lucide-react';
-import Link from 'next/link';
+import { SignInButton, UserButton, currentUser } from "@clerk/nextjs";
+import { Clapperboard, UserCircleIcon } from "lucide-react";
+import Link from "next/link";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 
 export const Actions = async () => {
   const user = await currentUser();
@@ -14,8 +14,7 @@ export const Actions = async () => {
           <Button
             size="sm"
             variant="primary"
-            className="rounded-3xl px-6 text-md py-5"
-          >
+            className="rounded-3xl px-6 text-md py-5">
             <UserCircleIcon className="h-5 w-5 mr-2" /> Login
           </Button>
         </SignInButton>
@@ -26,8 +25,7 @@ export const Actions = async () => {
             size="sm"
             variant="ghost"
             className="text-muted-foreground hover:text-primary"
-            asChild
-          >
+            asChild>
             <Link href={`/u/${user.username}`}>
               <Clapperboard className="h-5 w-5 lg:mr-2" />
               <span className="hidden lg:block">Dashboard</span>

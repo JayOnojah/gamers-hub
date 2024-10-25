@@ -1,12 +1,12 @@
-'use server';
+"use server";
 
-import { isBlockedByUser } from './../lib/block-service';
+import { isBlockedByUser } from "./../lib/block-service";
 
-import { v4 } from 'uuid';
-import { AccessToken } from 'livekit-server-sdk';
+import { v4 } from "uuid";
+import { AccessToken } from "livekit-server-sdk";
 
-import { getSelf } from '@/lib/auth-service';
-import { getUserById } from '@/lib/user-service';
+import { getSelf } from "@/lib/auth-service";
+import { getUserById } from "@/lib/user-service";
 
 export const createViewerToken = async (hostIdentity: string) => {
   let self;
@@ -22,13 +22,13 @@ export const createViewerToken = async (hostIdentity: string) => {
   const host = await getUserById(hostIdentity);
 
   if (!host) {
-    throw new Error('User not found');
+    throw new Error("User not found");
   }
 
   const isBlocked = await isBlockedByUser(host.id);
 
   if (isBlocked) {
-    throw new Error('User is blocked');
+    throw new Error("User is blocked");
   }
 
   const isHost = self.id === host.id;
