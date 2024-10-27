@@ -1,17 +1,17 @@
-import { ClerkProvider } from '@clerk/nextjs';
-import { dark } from '@clerk/themes';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { Toaster } from 'sonner';
-import './globals.css';
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
+import "./globals.css";
 
-import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'The Gamers Hub',
-  description: 'Gamers Hub: The top reality streamers service in the globe.',
+  title: "The Gamers Hub",
+  description: "Gamers Hub: The top reality streamers service in the globe.",
 };
 
 export default function RootLayout({
@@ -26,8 +26,7 @@ export default function RootLayout({
           <ThemeProvider
             attribute="class"
             forcedTheme="dark"
-            storageKey="gamehub-theme"
-          >
+            storageKey="gamehub-theme">
             <Toaster theme="light" position="bottom-center" />
             {children}
           </ThemeProvider>
