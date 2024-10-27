@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { VerifiedMark } from '../verified-mark';
+import { VerifiedMark } from "../verified-mark";
 
-import { BioModal } from './bio-modal';
+import { BioModal } from "./bio-modal";
 
 interface AboutCardProps {
   hostName: string;
@@ -22,7 +22,7 @@ export const AboutCard = ({
   const hostAsViewer = `host-${hostIdentity}`;
   const isHost = viewerIdentity === hostAsViewer;
 
-  const followedByLabel = followedByCount === 1 ? 'Follower' : 'Followers';
+  const followedByLabel = followedByCount === 1 ? "Follower" : "Followers";
 
   return (
     <div className="px-4">
@@ -36,11 +36,11 @@ export const AboutCard = ({
         <div className="text-sm text-muted-foreground">
           <span className="font-semibold text-primary mr-2">
             {followedByCount}
-          </span>{' '}
+          </span>{" "}
           {followedByLabel}
         </div>
         <p className="text-sm">
-          {bio || 'This user prefers to keep an air of mystery about them.'}
+          {bio || "This user prefers to keep an air of mystery about them."}
         </p>
       </div>
     </div>

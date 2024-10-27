@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
-import { useDebounce } from 'usehooks-ts';
-import { useParticipants } from '@livekit/components-react';
-import { LocalParticipant, RemoteParticipant } from 'livekit-client';
+import { useMemo, useState } from "react";
+import { useDebounce } from "usehooks-ts";
+import { useParticipants } from "@livekit/components-react";
+import { LocalParticipant, RemoteParticipant } from "livekit-client";
 
-import { Input } from '@/components/ui/input';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { Input } from "@/components/ui/input";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-import { CommunityItem } from './community-item';
+import { CommunityItem } from "./community-item";
 
 interface ChatCommunityProps {
   hostName: string;
@@ -21,7 +21,7 @@ export const ChatCommunity = ({
   viewerName,
   isHidden,
 }: ChatCommunityProps) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const debouncedValue = useDebounce<string>(value, 500);
 
   const participants = useParticipants();

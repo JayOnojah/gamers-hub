@@ -1,13 +1,13 @@
-import { toast } from 'sonner';
-import { useEffect, useState } from 'react';
-import { JwtPayload, jwtDecode } from 'jwt-decode';
+import { toast } from "sonner";
+import { useEffect, useState } from "react";
+import { JwtPayload, jwtDecode } from "jwt-decode";
 
-import { createViewerToken } from '@/actions/token';
+import { createViewerToken } from "@/actions/token";
 
 export const useViewerToken = (hostIdentity: string) => {
-  const [token, setToken] = useState('');
-  const [name, setName] = useState('');
-  const [identity, setIdentity] = useState('');
+  const [token, setToken] = useState("");
+  const [name, setName] = useState("");
+  const [identity, setIdentity] = useState("");
 
   useEffect(() => {
     const createToken = async () => {
@@ -30,7 +30,7 @@ export const useViewerToken = (hostIdentity: string) => {
           setName(name);
         }
       } catch {
-        toast.error('Something went wrong');
+        toast.error("Something went wrong");
       }
     };
 

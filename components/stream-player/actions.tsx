@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { toast } from 'sonner';
-import { UserPlus } from 'lucide-react';
-import { useTransition } from 'react';
-import { useAuth } from '@clerk/nextjs';
-import { useRouter } from 'next/navigation';
+import { toast } from "sonner";
+import { UserPlus } from "lucide-react";
+import { useTransition } from "react";
+import { useAuth } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { Skeleton } from '@/components/ui/skeleton';
-import { onFollow, onUnfollow } from '@/actions/follow';
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { onFollow, onUnfollow } from "@/actions/follow";
 
 interface ActionsProps {
   hostIdentity: string;
@@ -32,7 +32,7 @@ export const Actions = ({
         .then((data) =>
           toast.success(`You are now following ${data.following.username}`)
         )
-        .catch(() => toast.error('Something went wrong'));
+        .catch(() => toast.error("Something went wrong"));
     });
   };
 
@@ -42,13 +42,13 @@ export const Actions = ({
         .then((data) =>
           toast.success(`You have unfollowed ${data.following.username}`)
         )
-        .catch(() => toast.error('Something went wrong'));
+        .catch(() => toast.error("Something went wrong"));
     });
   };
 
   const toggleFollow = () => {
     if (!userId) {
-      return router.push('/sign-in');
+      return router.push("/sign-in");
     }
 
     if (isHost) return;
@@ -66,12 +66,11 @@ export const Actions = ({
       onClick={toggleFollow}
       variant="primary"
       size="sm"
-      className="w-full lg:w-auto rounded-md px-4"
-    >
+      className="w-full lg:w-auto rounded-md px-4">
       <UserPlus
-        className={cn('h4 w-4 mr-2', isFollowing ? 'fill-white' : 'fill-none')}
+        className={cn("h4 w-4 mr-2", isFollowing ? "fill-white" : "fill-none")}
       />
-      {isFollowing ? 'Unfollow' : 'Follow'}
+      {isFollowing ? "Unfollow" : "Follow"}
     </Button>
   );
 };
