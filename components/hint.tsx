@@ -3,14 +3,14 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@radix-ui/react-tooltip';
+} from "@radix-ui/react-tooltip";
 
 interface HintProps {
   label: string;
   children: React.ReactNode;
   asChild?: boolean;
-  side?: 'top' | 'bottom' | 'left' | 'right';
-  align?: 'start' | 'center' | 'end';
+  side?: "top" | "bottom" | "left" | "right";
+  align?: "start" | "center" | "end";
 }
 
 export const Hint = ({ label, children, asChild, side, align }: HintProps) => {
@@ -21,8 +21,7 @@ export const Hint = ({ label, children, asChild, side, align }: HintProps) => {
         <TooltipContent
           className="text-black bg-white px-2"
           side={side}
-          align={align}
-        >
+          align={align}>
           <p className="font-semibold">{label}</p>
         </TooltipContent>
       </Tooltip>
