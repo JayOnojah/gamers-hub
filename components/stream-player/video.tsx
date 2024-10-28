@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { ConnectionState, Track } from 'livekit-client';
+import { ConnectionState, Track } from "livekit-client";
 import {
   useConnectionState,
   useRemoteParticipant,
   useTracks,
-} from '@livekit/components-react';
+} from "@livekit/components-react";
 
-import { Skeleton } from '@/components/ui/skeleton';
-import { OfflineVideo } from './offline-video';
-import { LoadingVideo } from './loading-video';
-import { LiveVideo } from './live-video';
+import { Skeleton } from "@/components/ui/skeleton";
+import { OfflineVideo } from "./offline-video";
+import { LoadingVideo } from "./loading-video";
+import { LiveVideo } from "./live-video";
 
 interface VideoProps {
   hostName: string;

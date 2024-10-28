@@ -1,9 +1,9 @@
-'use-client';
+"use-client";
 
-import { toast } from 'sonner';
-import { Trash } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import { useState, useTransition, useRef, ElementRef } from 'react';
+import { toast } from "sonner";
+import { Trash } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState, useTransition, useRef, ElementRef } from "react";
 
 import {
   Dialog,
@@ -12,14 +12,14 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
-import { Hint } from '@/components/hint';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { updateStream } from '@/actions/stream';
-import { UploadDropzone } from '@/lib/uploadthing';
-import Image from 'next/image';
+} from "@/components/ui/dialog";
+import { Hint } from "@/components/hint";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { updateStream } from "@/actions/stream";
+import { UploadDropzone } from "@/lib/uploadthing";
+import Image from "next/image";
 
 interface InfoModalProps {
   initialName: string;
@@ -31,7 +31,7 @@ export const InfoModal = ({
   initialThumbnailUrl,
 }: InfoModalProps) => {
   const router = useRouter();
-  const closeRef = useRef<ElementRef<'button'>>(null);
+  const closeRef = useRef<ElementRef<"button">>(null);
   const [isPending, startTransition] = useTransition();
 
   const [name, setName] = useState(initialName);
@@ -41,11 +41,11 @@ export const InfoModal = ({
     startTransition(() => {
       updateStream({ thumbnailUrl: null })
         .then(() => {
-          toast.success('Thumbnail removed');
-          setThumbnailUrl('');
+          toast.success("Thumbnail removed");
+          setThumbnailUrl("");
           closeRef?.current?.click();
         })
-        .catch(() => toast.error('Something went wrong'));
+        .catch(() => toast.error("Something went wrong"));
     });
   };
 
@@ -55,10 +55,10 @@ export const InfoModal = ({
     startTransition(() => {
       updateStream({ name: name })
         .then(() => {
-          toast.success('Stream updated');
+          toast.success("Stream updated");
           closeRef?.current?.click();
         })
-        .catch(() => toast.error('Something went wrong'));
+        .catch(() => toast.error("Something went wrong"));
     });
   };
 
@@ -99,8 +99,7 @@ export const InfoModal = ({
                       type="button"
                       disabled={isPending}
                       onClick={onRemove}
-                      className="h-auto w-auto p-1.5"
-                    >
+                      className="h-auto w-auto p-1.5">
                       <Trash className="h-4 w-4" />
                     </Button>
                   </Hint>
@@ -118,10 +117,10 @@ export const InfoModal = ({
                   endpoint="thumbnailUploader"
                   appearance={{
                     label: {
-                      color: '#FFFFFF',
+                      color: "#FFFFFF",
                     },
                     allowedContent: {
-                      color: '#FFFFFF',
+                      color: "#FFFFFF",
                     },
                   }}
                   onClientUploadComplete={(res) => {
@@ -143,8 +142,7 @@ export const InfoModal = ({
               disabled={isPending}
               variant="primary"
               type="submit"
-              className="rounded-md px-6 text-md"
-            >
+              className="rounded-md px-6 text-md">
               Save
             </Button>
           </div>

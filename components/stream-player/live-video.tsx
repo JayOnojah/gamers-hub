@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useRef, useState, useEffect } from 'react';
-import { Participant, Track } from 'livekit-client';
-import { useTracks } from '@livekit/components-react';
-import { useEventListener } from 'usehooks-ts';
+import { useRef, useState, useEffect } from "react";
+import { Participant, Track } from "livekit-client";
+import { useTracks } from "@livekit/components-react";
+import { useEventListener } from "usehooks-ts";
 
-import { VolumeControl } from './volume-control';
-import { FullscreenControl } from './fullscreen-control';
+import { VolumeControl } from "./volume-control";
+import { FullscreenControl } from "./fullscreen-control";
 
 interface LiveVideoProps {
   participant: Participant;
@@ -55,7 +55,7 @@ export const LiveVideo = ({ participant }: LiveVideoProps) => {
     setIsFullscreen(isCurrentlyFullscreen);
   };
 
-  useEventListener('fullscreenchange', handleFullscreenChange, wrapperRef);
+  useEventListener("fullscreenchange", handleFullscreenChange, wrapperRef);
 
   useTracks([Track.Source.Camera, Track.Source.Microphone])
     .filter((track) => track.participant.identity === participant.identity)

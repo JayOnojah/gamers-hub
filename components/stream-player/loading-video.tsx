@@ -1,4 +1,4 @@
-import { Loader } from 'lucide-react';
+import { Loader } from "lucide-react";
 
 interface LoadingVideoProps {
   label: string;

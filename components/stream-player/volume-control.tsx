@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { Volume1, Volume2, VolumeX } from 'lucide-react';
+import { Volume1, Volume2, VolumeX } from "lucide-react";
 
-import { Hint } from '@/components/hint';
-import { Slider } from '@/components/ui/slider';
+import { Hint } from "@/components/hint";
+import { Slider } from "@/components/ui/slider";
 
 interface VolumeControlProps {
   onToggle: () => void;
@@ -27,7 +27,7 @@ export const VolumeControl = ({
     Icon = Volume2;
   }
 
-  const label = isMuted ? 'Unmute' : 'Mute';
+  const label = isMuted ? "Unmute" : "Mute";
 
   const handleChange = (value: number[]) => {
     onChange(value[0]);
@@ -38,8 +38,7 @@ export const VolumeControl = ({
       <Hint label={label} asChild>
         <button
           onClick={onToggle}
-          className="text-white hover:bg-white/10 p-1.5 rounded-lg"
-        >
+          className="text-white hover:bg-white/10 p-1.5 rounded-lg">
           <Icon className="h-6 w-6" />
         </button>
       </Hint>
