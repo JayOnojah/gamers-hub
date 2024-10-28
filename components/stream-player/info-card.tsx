@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { Pencil } from 'lucide-react';
+import Image from "next/image";
+import { Pencil } from "lucide-react";
 
-import { Separator } from '@/components/ui/separator';
+import { Separator } from "@/components/ui/separator";
 
-import { InfoModal } from './info-modal';
+import { InfoModal } from "./info-modal";
 
 interface InfoCardProps {
   name: string;

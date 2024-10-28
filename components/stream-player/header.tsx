@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { UserIcon } from 'lucide-react';
+import { UserIcon } from "lucide-react";
 import {
   useParticipants,
   useRemoteParticipant,
-} from '@livekit/components-react';
+} from "@livekit/components-react";
 
-import { Skeleton } from '@/components/ui/skeleton';
-import { VerifiedMark } from '@/components/verified-mark';
-import { UserAvatar, UserAvatarSkeleton } from '@/components/user-avatar';
+import { Skeleton } from "@/components/ui/skeleton";
+import { VerifiedMark } from "@/components/verified-mark";
+import { UserAvatar, UserAvatarSkeleton } from "@/components/user-avatar";
 
-import { Actions, ActionsSkeleton } from './actions';
+import { Actions, ActionsSkeleton } from "./actions";
 
 interface HeaderProps {
   imageUrl: string;
@@ -58,8 +58,8 @@ export const Header = ({
             <div className="font-semibold flex gap-x-1 items-center text-xs text-rose-500">
               <UserIcon className="h-4 w-4" />
               <p>
-                {participantCount}{' '}
-                {participantCount === 1 ? 'viewer' : 'viewers'}
+                {participantCount}{" "}
+                {participantCount === 1 ? "viewer" : "viewers"}
               </p>
             </div>
           ) : (
