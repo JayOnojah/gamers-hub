@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { useEffect, useMemo, useState } from 'react';
-import { ConnectionState } from 'livekit-client';
-import { useMediaQuery } from 'usehooks-ts';
+import { useEffect, useMemo, useState } from "react";
+import { ConnectionState } from "livekit-client";
+import { useMediaQuery } from "usehooks-ts";
 import {
   useChat,
   useConnectionState,
   useRemoteParticipant,
-} from '@livekit/components-react';
+} from "@livekit/components-react";
 
-import { ChatVariant, useChatSidebar } from '@/store/use-chat-sidebar';
+import { ChatVariant, useChatSidebar } from "@/store/use-chat-sidebar";
 
-import { ChatForm, ChatFormSkeleton } from './chat-form';
-import { ChatList, ChatListSkeleton } from './chat-list';
-import { ChatHeader, ChatHeaderSkeleton } from './chat-header';
-import { ChatCommunity } from './chat-community';
+import { ChatForm, ChatFormSkeleton } from "./chat-form";
+import { ChatList, ChatListSkeleton } from "./chat-list";
+import { ChatHeader, ChatHeaderSkeleton } from "./chat-header";
+import { ChatCommunity } from "./chat-community";
 
 interface ChatProps {
   hostName: string;
@@ -35,7 +35,7 @@ export const Chat = ({
   isChatDelayed,
   isChatFollowersOnly,
 }: ChatProps) => {
-  const matches = useMediaQuery('(max-width: 1024px)');
+  const matches = useMediaQuery("(max-width: 1024px)");
   const { variant, onExpand } = useChatSidebar((state) => state);
   const connectionState = useConnectionState();
   const participant = useRemoteParticipant(hostIdentity);
@@ -44,7 +44,7 @@ export const Chat = ({
 
   const isHidden = !isChatEnabled || !isOnline;
 
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const { chatMessages: messages, send } = useChat();
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export const Chat = ({
     if (!send) return;
 
     send(value);
-    setValue('');
+    setValue("");
   };
 
   const onChange = (value: string) => {

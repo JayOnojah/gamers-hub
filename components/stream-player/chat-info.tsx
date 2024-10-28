@@ -1,7 +1,7 @@
-import { useMemo } from 'react';
-import { Info } from 'lucide-react';
+import { useMemo } from "react";
+import { Info } from "lucide-react";
 
-import { Hint } from '@/components/hint';
+import { Hint } from "@/components/hint";
 
 interface ChatInfoProps {
   isDelayed: boolean;
@@ -11,34 +11,34 @@ interface ChatInfoProps {
 export const ChatInfo = ({ isDelayed, isFollowersOnly }: ChatInfoProps) => {
   const hint = useMemo(() => {
     if (isFollowersOnly && !isDelayed) {
-      return 'Only followers can chat';
+      return "Only followers can chat";
     }
 
     if (isDelayed && !isFollowersOnly) {
-      return 'Messages are dealyed by 3 seconds';
+      return "Messages are dealyed by 3 seconds";
     }
 
     if (isDelayed && isFollowersOnly) {
-      return 'Only followers can chat. Messages are delayed by 3 seconds';
+      return "Only followers can chat. Messages are delayed by 3 seconds";
     }
 
-    return '';
+    return "";
   }, [isDelayed, isFollowersOnly]);
 
   const label = useMemo(() => {
     if (isFollowersOnly && !isDelayed) {
-      return 'Followers Only';
+      return "Followers Only";
     }
 
     if (isDelayed && !isFollowersOnly) {
-      return 'Slow Mode';
+      return "Slow Mode";
     }
 
     if (isDelayed && isFollowersOnly) {
-      return 'Followers only and slow mode';
+      return "Followers only and slow mode";
     }
 
-    return '';
+    return "";
   }, [isDelayed, isFollowersOnly]);
 
   if (!isDelayed && !isFollowersOnly) {

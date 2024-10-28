@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { cn } from '@/lib/utils';
-import { SendHorizonal } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Skeleton } from '@/components/ui/skeleton';
-import { ChatInfo } from './chat-info';
+import { cn } from "@/lib/utils";
+import { SendHorizonal } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { ChatInfo } from "./chat-info";
 
 interface ChatFormProps {
   onSubmit: () => void;
@@ -58,8 +58,7 @@ export const ChatForm = ({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col-items-center gay-y-4 p-3"
-    >
+      className="flex flex-col-items-center gay-y-4 p-3">
       <div className="w-full">
         <ChatInfo isDelayed={isDelayed} isFollowersOnly={isFollowersOnly} />
         <div className="relative w-full flex items-center mt-1">
@@ -69,8 +68,8 @@ export const ChatForm = ({
             disabled={isDisabled}
             placeholder="Send a message..."
             className={cn(
-              'rounded-r-none border-r-0 rounded-l-lg pl-5 focus-visible:ring-0 py-5 focus-visible:ring-transparent focus-visible:ring-offset-0 border border-[#585858] placeholder:text-[#989898]',
-              isFollowersOnly && 'rounded-r-none border-t-0'
+              "rounded-r-none border-r-0 rounded-l-lg pl-5 focus-visible:ring-0 py-5 focus-visible:ring-transparent focus-visible:ring-offset-0 border border-[#585858] placeholder:text-[#989898]",
+              isFollowersOnly && "rounded-r-none border-t-0"
             )}
           />
           <Button
@@ -78,8 +77,7 @@ export const ChatForm = ({
             variant="secondary"
             size="sm"
             disabled={isDisabled}
-            className="rounded-l-none py-5 rounded-r-lg border-solid border border-[#585858] bg-[#585858] px-4 hover:bg-[#585858]"
-          >
+            className="rounded-l-none py-5 rounded-r-lg border-solid border border-[#585858] bg-[#585858] px-4 hover:bg-[#585858]">
             <SendHorizonal className="w-4 h-4" />
           </Button>
         </div>
