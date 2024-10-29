@@ -1,10 +1,10 @@
-import { getRecommended } from '@/lib/recommended-service';
-import { getFollowedUsers } from '@/lib/follow-service';
+import { getRecommended } from "@/lib/recommended-service";
+import { getFollowedUsers } from "@/lib/follow-service";
 
-import { Wrapper } from './wrapper';
-import { Following, FollowingSkeletoton } from './following';
-import { Toggle, ToggleSkeleton } from './toggle';
-import { Recommended, RecommendedSkeleton } from './recommended';
+import { Wrapper } from "./wrapper";
+import { Following, FollowingSkeletoton } from "./following";
+import { Toggle, ToggleSkeleton } from "./toggle";
+import { Recommended, RecommendedSkeleton } from "./recommended";
 
 export const Sidebar = async () => {
   const recommended = await getRecommended();

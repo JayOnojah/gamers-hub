@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { useSidebar } from '@/store/use-sidebar';
-import { Skeleton } from '@/components/ui/skeleton';
-import { UserAvatar } from '@/components/user-avatar';
-import { LiveBagde } from '@/components/live-badge';
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { useSidebar } from "@/store/use-sidebar";
+import { Skeleton } from "@/components/ui/skeleton";
+import { UserAvatar } from "@/components/user-avatar";
+import { LiveBagde } from "@/components/live-badge";
 
 interface UseritemProps {
   username: string;
@@ -29,18 +29,16 @@ export const UserItem = ({ username, imageUrl, isLive }: UseritemProps) => {
       asChild
       variant="ghost"
       className={cn(
-        'w-full h-12',
-        collapsed ? 'justify-center' : 'justify-start',
-        isActive && 'bg-accent'
-      )}
-    >
+        "w-full h-12",
+        collapsed ? "justify-center" : "justify-start",
+        isActive && "bg-accent"
+      )}>
       <Link href={href}>
         <div
           className={cn(
-            'flex items-center w-full gap-x-4',
-            collapsed && 'justify-center'
-          )}
-        >
+            "flex items-center w-full gap-x-4",
+            collapsed && "justify-center"
+          )}>
           <UserAvatar imageUrl={imageUrl} username={username} isLive={isLive} />
           {!collapsed && <p className="truncate">{username}</p>}
           {!collapsed && isLive && <LiveBagde className="ml-auto" />}

@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import qs from 'query-string';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { SearchIcon, X } from 'lucide-react';
+import qs from "query-string";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { SearchIcon, X } from "lucide-react";
 
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export const Search = () => {
   const router = useRouter();
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ export const Search = () => {
 
     const url = qs.stringifyUrl(
       {
-        url: '/search',
+        url: "/search",
         query: { term: value },
       },
       { skipEmptyString: true }
@@ -29,14 +29,13 @@ export const Search = () => {
   };
 
   const onClear = () => {
-    setValue('');
+    setValue("");
   };
 
   return (
     <form
       onSubmit={onSubmit}
-      className="relative w-full lg:w-[500px] flex items-center"
-    >
+      className="relative w-full lg:w-[500px] flex items-center">
       <Input
         value={value}
         onChange={(e) => setValue(e.target.value)}
@@ -53,8 +52,7 @@ export const Search = () => {
         type="submit"
         size="sm"
         variant="secondary"
-        className="rounded-l-none rounded-r-3xl border-solid border border-[#585858] bg-[#585858] h-10 px-5 hover:bg-[#585858]"
-      >
+        className="rounded-l-none rounded-r-3xl border-solid border border-[#585858] bg-[#585858] h-10 px-5 hover:bg-[#585858]">
         <SearchIcon className="h-5 w-5 text-[#999999]" />
       </Button>
     </form>

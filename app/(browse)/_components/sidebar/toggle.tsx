@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { Hint } from '@/components/hint';
-import { Button } from '@/components/ui/button';
-import { useSidebar } from '@/store/use-sidebar';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Hint } from "@/components/hint";
+import { Button } from "@/components/ui/button";
+import { useSidebar } from "@/store/use-sidebar";
+import { Skeleton } from "@/components/ui/skeleton";
 
-import { ArrowLeftFromLine, ArrowRightFromLine } from 'lucide-react';
+import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
 
 export const Toggle = () => {
   const { collapsed, onExpand, onCollapse } = useSidebar((state) => state);
 
-  const label = collapsed ? 'Expand' : 'Collapse';
+  const label = collapsed ? "Expand" : "Collapse";
 
   return (
     <>
@@ -32,8 +32,7 @@ export const Toggle = () => {
             <Button
               onClick={onCollapse}
               className="h-auto p-2 ml-auto"
-              variant="ghost"
-            >
+              variant="ghost">
               <ArrowLeftFromLine className="h-4 w-4" />
             </Button>
           </Hint>
