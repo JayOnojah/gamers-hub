@@ -1,6 +1,6 @@
-import { Suspense } from 'react';
+import { Suspense } from "react";
 
-import { ResultSkeleton, Results } from './_components/results';
+import { ResultSkeleton, Results } from "./_components/results";
 
 export default function Page() {
   return (
