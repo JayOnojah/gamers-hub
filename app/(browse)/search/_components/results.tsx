@@ -1,7 +1,7 @@
-import { getSearch } from '@/lib/search-service';
-import { Skeleton } from '@/components/ui/skeleton';
+import { getSearch } from "@/lib/search-service";
+import { Skeleton } from "@/components/ui/skeleton";
 
-import { ResultCard, ResultCardSkeleton } from './result-card';
+import { ResultCard, ResultCardSkeleton } from "./result-card";
 
 interface ResultsProps {
   term?: string;

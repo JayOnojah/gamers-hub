@@ -1,7 +1,7 @@
-import { Suspense } from 'react';
-import { redirect } from 'next/navigation';
+import { Suspense } from "react";
+import { redirect } from "next/navigation";
 
-import { Results, ResultsSkeleton } from './_components/results';
+import { Results, ResultsSkeleton } from "./_components/results";
 
 interface SearchPageProps {
   searchParams: {
@@ -11,7 +11,7 @@ interface SearchPageProps {
 
 const SearchPage = ({ searchParams }: SearchPageProps) => {
   if (!searchParams.term) {
-    redirect('/');
+    redirect("/");
   }
 
   return (

@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { User } from '@prisma/client';
-import { formatDistanceToNow } from 'date-fns';
+import Link from "next/link";
+import { User } from "@prisma/client";
+import { formatDistanceToNow } from "date-fns";
 
-import { Skeleton } from '@/components/ui/skeleton';
-import { Thumbnail, ThumbnailSkeleton } from '@/components/thumbnail';
-import { VerifiedMark } from '@/components/verified-mark';
+import { Skeleton } from "@/components/ui/skeleton";
+import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail";
+import { VerifiedMark } from "@/components/verified-mark";
 
 interface ResultCardProps {
   data: {
