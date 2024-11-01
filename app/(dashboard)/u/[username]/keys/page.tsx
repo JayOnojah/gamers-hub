@@ -1,16 +1,16 @@
-import { getSelf } from '@/lib/auth-service';
-import { Button } from '@/components/ui/button';
-import { UrlCard } from './_components/url-card';
-import { getStreamByUserId } from '@/lib/stream-service';
-import { KeyCard } from './_components/key-card';
-import { ConnectModal } from './_components/connect-modal';
+import { getSelf } from "@/lib/auth-service";
+import { Button } from "@/components/ui/button";
+import { UrlCard } from "./_components/url-card";
+import { getStreamByUserId } from "@/lib/stream-service";
+import { KeyCard } from "./_components/key-card";
+import { ConnectModal } from "./_components/connect-modal";
 
 const KeysPage = async () => {
   const self = await getSelf();
   const stream = await getStreamByUserId(self.id);
 
   if (!stream) {
-    throw new Error('Stream not found');
+    throw new Error("Stream not found");
   }
 
   return (

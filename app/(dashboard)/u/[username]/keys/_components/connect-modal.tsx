@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { toast } from 'sonner';
-import { useState, useTransition, useRef, ElementRef } from 'react';
-import { AlertTriangle } from 'lucide-react';
-import { IngressInput } from 'livekit-server-sdk';
-import { Button } from '@/components/ui/button';
+import { toast } from "sonner";
+import { useState, useTransition, useRef, ElementRef } from "react";
+import { AlertTriangle } from "lucide-react";
+import { IngressInput } from "livekit-server-sdk";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -12,16 +12,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+} from "@/components/ui/dialog";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { createIngress } from '@/actions/ingress';
+} from "@/components/ui/select";
+import { createIngress } from "@/actions/ingress";
 
 const RTMP = String(IngressInput.RTMP_INPUT);
 const WHIP = String(IngressInput.WHIP_INPUT);
@@ -29,7 +29,7 @@ const WHIP = String(IngressInput.WHIP_INPUT);
 type IngressType = typeof RTMP | typeof WHIP;
 
 export const ConnectModal = () => {
-  const closeRef = useRef<ElementRef<'button'>>(null);
+  const closeRef = useRef<ElementRef<"button">>(null);
   const [isPending, startTransition] = useTransition();
   const [ingressType, setIngressType] = useState<IngressType>(RTMP);
 
@@ -37,10 +37,10 @@ export const ConnectModal = () => {
     startTransition(() => {
       createIngress(parseInt(ingressType))
         .then(() => {
-          toast.success('Ingress Created!');
+          toast.success("Ingress Created!");
           closeRef?.current?.click();
         })
-        .catch(() => toast.error('Something went wrong.'));
+        .catch(() => toast.error("Something went wrong."));
     });
   };
 
@@ -56,8 +56,7 @@ export const ConnectModal = () => {
         <Select
           disabled={isPending}
           value={ingressType}
-          onValueChange={(value) => setIngressType(value)}
-        >
+          onValueChange={(value) => setIngressType(value)}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Ingress Type" />
           </SelectTrigger>

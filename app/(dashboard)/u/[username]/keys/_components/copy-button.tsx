@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { CheckCheck, Copy } from 'lucide-react';
+import { useState } from "react";
+import { CheckCheck, Copy } from "lucide-react";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 
 interface CopyButtonProps {
   value?: string;
@@ -29,9 +29,8 @@ export const CopyButton = ({ value }: CopyButtonProps) => {
       onClick={onCopy}
       disabled={!value || isCopied}
       variant="ghost"
-      size="sm"
-    >
-      {' '}
+      size="sm">
+      {" "}
       <Icon className="h-4 w-4" />
     </Button>
   );

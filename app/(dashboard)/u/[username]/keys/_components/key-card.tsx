@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
-import { CopyButton } from './copy-button';
+import { CopyButton } from "./copy-button";
 
 interface KeyCardProps {
   value: string | null;
@@ -21,15 +21,15 @@ export const KeyCard = ({ value }: KeyCardProps) => {
         <div className="space-y-2 w-full">
           <div className="w-full flex items-center gap-x-2">
             <Input
-              value={value || ''}
-              type={show ? 'text' : 'password'}
+              value={value || ""}
+              type={show ? "text" : "password"}
               placeholder="Stream Key"
               disabled
             />
-            <CopyButton value={value || ''} />
+            <CopyButton value={value || ""} />
           </div>
           <Button onClick={() => setShow(!show)} size="sm" variant="link">
-            {show ? 'Hide' : 'Show'}
+            {show ? "Hide" : "Show"}
           </Button>
         </div>
       </div>
