@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { toast } from 'sonner';
-import { useTransition } from 'react';
+import { toast } from "sonner";
+import { useTransition } from "react";
 
-import { onUnblock } from '@/actions/block';
-import { Button } from '@/components/ui/button';
+import { onUnblock } from "@/actions/block";
+import { Button } from "@/components/ui/button";
 
 interface UnblockButtonProps {
   userId: string;
@@ -19,7 +19,7 @@ export const UnblockButton = ({ userId }: UnblockButtonProps) => {
         .then((result) =>
           toast.success(`User ${result.blocked.username} unblocked`)
         )
-        .catch(() => toast.error('Something went wrong'));
+        .catch(() => toast.error("Something went wrong"));
     });
   };
 
@@ -29,8 +29,7 @@ export const UnblockButton = ({ userId }: UnblockButtonProps) => {
       onClick={onClick}
       variant="link"
       size="sm"
-      className="text-blue-500 w-full"
-    >
+      className="text-blue-500 w-full">
       Unblock
     </Button>
   );

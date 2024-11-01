@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { ArrowUpDown } from 'lucide-react';
-import { ColumnDef } from '@tanstack/react-table';
+import { ArrowUpDown } from "lucide-react";
+import { ColumnDef } from "@tanstack/react-table";
 
-import { Button } from '@/components/ui/button';
-import { UserAvatar } from '@/components/user-avatar';
+import { Button } from "@/components/ui/button";
+import { UserAvatar } from "@/components/user-avatar";
 
-import { UnblockButton } from './unblock-button';
+import { UnblockButton } from "./unblock-button";
 
 export type BlockedUser = {
   id: string;
@@ -18,12 +18,11 @@ export type BlockedUser = {
 
 export const columns: ColumnDef<BlockedUser>[] = [
   {
-    accessorKey: 'username',
+    accessorKey: "username",
     header: ({ column }) => (
       <Button
         variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-      >
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
         Username
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
@@ -38,19 +37,18 @@ export const columns: ColumnDef<BlockedUser>[] = [
     ),
   },
   {
-    accessorKey: 'createdAt',
+    accessorKey: "createdAt",
     header: ({ column }) => (
       <Button
         variant="ghost"
-        onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-      >
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
         Date blocked
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
     ),
   },
   {
-    id: 'actions',
+    id: "actions",
     cell: ({ row }) => <UnblockButton userId={row.original.userId} />,
   },
 ];
