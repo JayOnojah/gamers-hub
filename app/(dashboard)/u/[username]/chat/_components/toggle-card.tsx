@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { toast } from 'sonner';
-import { useTransition } from 'react';
+import { toast } from "sonner";
+import { useTransition } from "react";
 
-import { Switch } from '@/components/ui/switch';
-import { updateStream } from '@/actions/stream';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Switch } from "@/components/ui/switch";
+import { updateStream } from "@/actions/stream";
+import { Skeleton } from "@/components/ui/skeleton";
 
-type FieldTypes = 'isChatEnabled' | 'isChatDelayed' | 'isChatFollowersOnly';
+type FieldTypes = "isChatEnabled" | "isChatDelayed" | "isChatFollowersOnly";
 
 interface ToggleCardProp {
   label: string;
@@ -22,9 +22,9 @@ export const ToggleCard = ({ label, value = false, field }: ToggleCardProp) => {
     startTransition(() => {
       updateStream({ [field]: !value })
         .then(() =>
-          toast.success('Account Chat Settings successfully updated!')
+          toast.success("Account Chat Settings successfully updated!")
         )
-        .catch(() => toast.error('Something went wrong'));
+        .catch(() => toast.error("Something went wrong"));
     });
   };
 
@@ -36,9 +36,8 @@ export const ToggleCard = ({ label, value = false, field }: ToggleCardProp) => {
           <Switch
             disabled={isPending}
             onCheckedChange={onChange}
-            checked={value}
-          >
-            {value ? 'On' : 'Off'}
+            checked={value}>
+            {value ? "On" : "Off"}
           </Switch>
         </div>
       </div>
